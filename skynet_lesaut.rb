@@ -13,11 +13,19 @@ loop do
     
     # Write an action using puts
     # To debug: STDERR.puts "Debug messages..."
-    if (coord_x < @road-1)
-        puts "SPEED"
-    elsif (coord_x > @road-1)
+    if (coord_x > @road)
         puts "SLOW"
-    else puts "JUMP"
-end
+    elsif ( coord_x + speed > @road)
+        puts "JUMP"
+    else  
+     if (speed <= @gap)
+     puts "SPEED"
+     elsif ( speed >  @gap+1)
+     puts "SLOW"
+     else  
+     puts "WAIT"
+     end
+    end
      # A single line containing one of 4 keywords: SPEED, SLOW, JUMP, WAIT.
 end
+
